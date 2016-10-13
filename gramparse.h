@@ -20,16 +20,9 @@
 #ifndef GRAMPARSE_H
 #define GRAMPARSE_H
 
-#include "parsenodes.h"
 #include "scanner.h"
 
 #define AMTYPE_INDEX                    'i'     /* index access method */
-
-/*
- * NB: include gram.h only AFTER including scanner.h, because scanner.h
- * is what #defines YYLTYPE.
- */
-#include "gram.h"
 
 /*
  * The YY_EXTRA data that a flex scanner allows us to pass around.  Private
@@ -55,7 +48,7 @@ typedef struct base_yy_extra_type
 	/*
 	 * State variables that belong to the grammar.
 	 */
-	List	   *parsetree;		/* final parse result is delivered here */
+	void	   *parsetree;		/* final parse result is delivered here */
 } base_yy_extra_type;
 
 /*
@@ -68,7 +61,7 @@ typedef struct base_yy_extra_type
 
 
 /* from parser.c */
-extern int base_yylex(YYSTYPE *lvalp, YYLTYPE *llocp,
+extern int base_yylex(void *lvalp, YYLTYPE *llocp,
 		   core_yyscan_t yyscanner);
 
 /* from gram.y */

@@ -41,9 +41,8 @@
 #include "scansup.h"
 #include "pg_wchar.h"
 
-#include "gram.h"
-#include "utils/palloc.h"
-#include "utils/elog.h"
+#include "palloc.h"
+#include "elog.h"
 }
 
 %{
