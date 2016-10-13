@@ -1089,35 +1089,9 @@ typedef union YYSTYPE
 
 	char				chr;
 	bool				boolean;
-	JoinType			jtype;
-	Node				*node;
-	Value				*value;
-	ObjectType			objtype;
-	TypeName			*typnam;
-	FunctionParameter   *fun_param;
-	FunctionParameterMode fun_param_mode;
-	FuncWithArgs		*funwithargs;
-	DefElem				*defelt;
-	SortBy				*sortby;
-	WindowDef			*windef;
-	JoinExpr			*jexpr;
-	IndexElem			*ielem;
-	Alias				*alias;
-	RangeVar			*range;
-	IntoClause			*into;
-	WithClause			*with;
-	InferClause			*infer;
-	OnConflictClause	*onconflict;
-	A_Indices			*aind;
-	ResTarget			*target;
-	struct PrivTarget	*privtarget;
-	AccessPriv			*accesspriv;
-	struct ImportQual	*importqual;
-	InsertStmt			*istmt;
-	VariableSetStmt		*vsetstmt;
 }
 /* Line 193 of yacc.c.  */
-#line 1121 "y.tab.c"
+#line 1095 "gram.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -1142,7 +1116,7 @@ typedef struct YYLTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 1146 "y.tab.c"
+#line 1120 "gram.c"
 
 #ifdef short
 # undef short
@@ -1469,7 +1443,7 @@ static const yytype_int16 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   331,   331
+       0,   305,   305
 };
 #endif
 
@@ -2510,7 +2484,7 @@ yyreduce:
     {
       
 /* Line 1267 of yacc.c.  */
-#line 2514 "y.tab.c"
+#line 2488 "gram.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2730,7 +2704,7 @@ yyreturn:
 }
 
 
-#line 334 "gram.y"
+#line 308 "gram.y"
 
 
 /*

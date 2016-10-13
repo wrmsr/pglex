@@ -112,32 +112,6 @@ static void base_yyerror(YYLTYPE *yylloc, core_yyscan_t yyscanner,
 
 	char				chr;
 	bool				boolean;
-	JoinType			jtype;
-	Node				*node;
-	Value				*value;
-	ObjectType			objtype;
-	TypeName			*typnam;
-	FunctionParameter   *fun_param;
-	FunctionParameterMode fun_param_mode;
-	FuncWithArgs		*funwithargs;
-	DefElem				*defelt;
-	SortBy				*sortby;
-	WindowDef			*windef;
-	JoinExpr			*jexpr;
-	IndexElem			*ielem;
-	Alias				*alias;
-	RangeVar			*range;
-	IntoClause			*into;
-	WithClause			*with;
-	InferClause			*infer;
-	OnConflictClause	*onconflict;
-	A_Indices			*aind;
-	ResTarget			*target;
-	struct PrivTarget	*privtarget;
-	AccessPriv			*accesspriv;
-	struct ImportQual	*importqual;
-	InsertStmt			*istmt;
-	VariableSetStmt		*vsetstmt;
 }
 
 /*
