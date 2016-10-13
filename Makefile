@@ -1,6 +1,6 @@
 all: scan.o
 
-scan.o:
+all:
 	flex -o scan.c scan.l
 	bison -d -y -o gram.c gram.y
 	gcc -o scan.o -c scan.c
