@@ -61,6 +61,18 @@
 #include "parser.h"
 
 /*
+ * Location tracking support --- simpler than bison's default, since we only
+ * want to track the start position not the end position of each nonterminal.
+ */
+#define YYLLOC_DEFAULT(Current, Rhs, N) \
+	do { \
+		if ((N) > 0) \
+			(Current) = (Rhs)[1]; \
+		else \
+			(Current) = (-1); \
+	} while (0)
+
+/*
  * The above macro assigns -1 (unknown) as the parse location of any
  * nonterminal that was reduced from an empty rule.  This is problematic
  * for nonterminals defined like
@@ -325,5 +337,5 @@ base_yyerror(YYLTYPE *yylloc, core_yyscan_t yyscanner, const char *msg)
 void
 parser_init(base_yy_extra_type *yyext)
 {
-	yyext->parsetree = NIL;		/* in case grammar forgets to set it */
+	yyext->parsetree = NULL;		/* in case grammar forgets to set it */
 }
