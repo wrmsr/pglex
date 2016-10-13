@@ -25,6 +25,12 @@
 #define AMTYPE_INDEX                    'i'     /* index access method */
 
 /*
+ * NB: include gram.h only AFTER including scanner.h, because scanner.h
+ * is what #defines YYLTYPE.
+ */
+#include "gram.h"
+
+/*
  * The YY_EXTRA data that a flex scanner allows us to pass around.  Private
  * state needed for raw parsing/lexing goes here.
  */
