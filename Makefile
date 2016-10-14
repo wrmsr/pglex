@@ -1,5 +1,4 @@
-all: scan.o
-
+.PHONY: all
 all:
 	flex -o scan.c scan.l
 	bison -d -y -o gram.c gram.y

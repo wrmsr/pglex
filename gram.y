@@ -10,39 +10,6 @@
  * Portions Copyright (c) 1996-2016, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
  *
- *
- * IDENTIFICATION
- *	  src/backend/parser/gram.y
- *
- * HISTORY
- *	  AUTHOR			DATE			MAJOR EVENT
- *	  Andrew Yu			Sept, 1994		POSTQUEL to SQL conversion
- *	  Andrew Yu			Oct, 1994		lispy code conversion
- *
- * NOTES
- *	  CAPITALS are used to represent terminal symbols.
- *	  non-capitals are used to represent non-terminals.
- *
- *	  In general, nothing in this file should initiate database accesses
- *	  nor depend on changeable state (such as SET variables).  If you do
- *	  database accesses, your code will fail when we have aborted the
- *	  current transaction and are just parsing commands to find the next
- *	  ROLLBACK or COMMIT.  If you make use of SET variables, then you
- *	  will do the wrong thing in multi-query strings like this:
- *			SET SQL_inheritance TO off; SELECT * FROM foo;
- *	  because the entire string is parsed by gram.y before the SET gets
- *	  executed.  Anything that depends on the database or changeable state
- *	  should be handled during parse analysis so that it happens at the
- *	  right time not the wrong time.  The handling of SQL_inheritance is
- *	  a good example.
- *
- * WARNINGS
- *	  If you use a list, make sure the datum is a node so that the printing
- *	  routines work.
- *
- *	  Sometimes we assign constants to makeStrings. Make sure we don't free
- *	  those.
- *
  *-------------------------------------------------------------------------
  */
 
